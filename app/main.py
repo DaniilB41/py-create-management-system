@@ -41,8 +41,8 @@ def write_students_information(students: list[Student]) -> int:
     return len(students)
 
 
-def read_groups_information(file_name: str) -> set:
-    with open(file_name, "rb") as file:
+def read_groups_information() -> set:
+    with open("groups.pickle", "rb") as file:
         groups_list = pickle.load(file)
     specialty = set()
     for group in groups_list:
@@ -50,7 +50,7 @@ def read_groups_information(file_name: str) -> set:
     return specialty
 
 
-def read_students_information(file_name: str) -> list:
-    with open(file_name, "rb") as file:
+def read_students_information() -> list:
+    with open("students.pickle", "rb") as file:
         student_list = pickle.load(file)
     return student_list
